@@ -1,13 +1,13 @@
 package com.driver;
 
 public class Car extends Vehicle {
-    final int wheels;
-    final String type;
-    final int doors;
-    final int gears;
-    final boolean isManual;
-    private int currentGear;
-    final int seats;
+    int  wheels;
+    String type;
+    int doors;
+    int gears;
+    boolean isManual;
+    int currentGear;
+    int seats;
 
     public Car(String name, int wheels, int doors, int gears, boolean isManual, String type, int seats) {
         //Hint: Car extends Vehicle
@@ -21,8 +21,12 @@ public class Car extends Vehicle {
         this.currentGear = 1;
     }
     public void changeGear(int newGear) {
-        this.currentGear = newGear;
-        System.out.println("changeGear method called - The gear is changed to: " + currentGear);
+        if (newGear > 0 && newGear <= gears) {
+            this.currentGear = newGear;
+            System.out.println("changeGear method called - The gear is changed to: " + currentGear);
+        } else {
+            System.out.println("Invalid gear: " + newGear);
+        }
     }
     public void changeSpeed(int newSpeed, int newDirection){
         super.move(newSpeed, newDirection);
