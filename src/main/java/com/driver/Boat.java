@@ -1,8 +1,8 @@
 package com.driver;
 
 public class Boat implements WaterVehicle {
-    private final String name;
-    private final int capacity;
+    String name;
+    int capacity;
 
     public Boat(String name, int capacity) {
         this.name = name;
